@@ -1,4 +1,3 @@
-Here’s the updated `README.md` file, which now includes details about setting up a cron job to schedule the script execution:
 
 ---
 
