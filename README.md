@@ -1,6 +1,4 @@
-# aws-resource-monitor
-A script to collect and archive data of various AWS resources (EC2 instances, S3 buckets, Lambda functions, IAM users) on a scheduled basis, compress the data, and log the process for auditing and debugging."
-Here’s a more detailed `README.md` file for your repository:
+Here’s the updated `README.md` file, which now includes details about setting up a cron job to schedule the script execution:
 
 ---
 
@@ -99,7 +97,20 @@ The **AWS Resource Collector** is a shell script designed to automate the proces
      0 * * * * /path/to/aws_resources.sh
      ```
 
+     This will schedule the script to run on the hour, every hour. Replace `/path/to/aws_resources.sh` with the actual path to your script.
+
    - Save and exit the editor. The script will now run automatically every hour.
+
+   - **Explanation**: The cron expression `0 * * * *` means:
+     - `0`: Minute (run at minute 0)
+     - `*`: Hour (every hour)
+     - `*`: Day of the month (every day)
+     - `*`: Month (every month)
+     - `*`: Day of the week (every day of the week)
+
+     You can adjust this schedule as needed. For example:
+     - To run it every 30 minutes: `*/30 * * * *`
+     - To run it at midnight every day: `0 0 * * *`
 
 ## Output Files
 
@@ -139,7 +150,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Additional Resources**: You can easily extend the script to collect other AWS resources by adding additional `aws` CLI commands and saving their output in similar `.txt` files.
 
 ---
-
-This `README.md` file provides an overview of the project, installation instructions, usage details, and example output. You can customize this file further based on your preferences or organizational requirements.
-
-Let me know if you'd like any adjustments!
